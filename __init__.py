@@ -2,12 +2,14 @@
 Library for looking up servers by role
 
 """
-import random
-from datetime import datetime, timedelta
-import os.path
-import yaml
 import json
 import logging
+import os.path
+import random
+from datetime import datetime, timedelta
+
+import yaml
+
 
 LOG = logging.getLogger(__name__)
 
