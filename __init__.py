@@ -54,7 +54,7 @@ class LiveConfig(dict):
         self._last_load = None
         self._reload()
         if use_timer:
-            from tornado import ioloop
+            from tornado import ioloop # pylint: disable=F0401
             callback = ioloop.PeriodicCallback(self._reload, reload_every*1000)
             callback.start()
 
