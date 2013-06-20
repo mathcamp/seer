@@ -67,11 +67,13 @@ class LiveConfig(dict):
         stream = open(self._filename)
         try:
             if self._filename.endswith(".yaml"):
+                data = yaml.load(stream)
                 self.clear()
-                self.update(yaml.load(stream))
+                self.update(data)
             elif self._filename.endswith(".json"):
+                data = json.load(stream)
                 self.clear()
-                self.update(json.load(stream))
+                self.update(data)
             else:
                 raise Exception("Unsupported file format! " + self._filename)
         except:
