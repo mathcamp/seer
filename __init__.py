@@ -138,3 +138,10 @@ class Seer(object): # pylint: disable=R0924
             data = {}
         data['name'] = name
         return data
+
+    def get(self, key, default=None):
+        """ Get a key's value. Return a default if not present """
+        try:
+            return self[key]
+        except KeyError:
+            return default
